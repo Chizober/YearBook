@@ -1,0 +1,295 @@
+
+[
+  {
+    "name": "Jane Doe",
+    "image": "images/1.jpg",
+    "quote": "Stay curious.",
+    "interests": ["Science Club", "Reading"],
+    "accomplishments": "Head Girl",
+    "achievements": ["Science Fair Winner", "Best Prefect"],
+    "memories": ["Inter-house Sports", "Science Exhibition"],
+    "superlatives": ["Most Intelligent"],
+    "social": "#",
+    "photos": ["images/1.jpg", "images/2.jpg"],
+    "video": "",
+     "shoutouts": [
+      { "from": "Maryam", "message": "You inspire me always." }]
+  },
+  {
+    "name": "John Smith",
+    "image": "images/4.jpg",
+    "quote": "Live and let live.",
+    "interests": ["Football", "Coding"],
+    "accomplishments": "School Team Captain",
+    "achievements": ["Top Scorer", "Football Tournament MVP"],
+    "memories": ["Winning the Finals", "ICT Project Week"],
+    "superlatives": ["Most Athletic"],
+    "social": "#",
+    "photos": ["images/5.jpg", "images/4.jpg"],
+    "video": "videos/john.mp4",
+    "shoutouts": [
+      { "from": "Maryam", "message": "You inspire me always." }]
+  },
+  {
+    "name": "Mary Johnson",
+    "image": "images/6.jpg",
+    "quote": "Dream big, act bigger.",
+    "interests": ["Art", "Volunteering"],
+    "accomplishments": "Art Club President",
+    "achievements": ["Art Competition 1st Prize", "Community Service Award"],
+    "memories": ["Cultural Day", "Excursion to Museum"],
+    "superlatives": ["Most Creative"],
+    "social": "#",
+    "photos": ["images/5.jpg"],
+    "video": "",
+    "shoutouts": [
+      { "from": "Maryam", "message": "You inspire me always." }]
+  },
+  {
+    "name": "David Lee",
+    "image": "images/9.jpg",
+    "quote": "Keep pushing boundaries.",
+    "interests": ["Basketball", "Robotics"],
+    "accomplishments": "Basketball Team Captain",
+    "achievements": ["Robotics Challenge Finalist"],
+    "memories": ["STEM Bootcamp", "Inter-school Match"],
+    "superlatives": ["Best in Tech"],
+    "social": "#",
+    "photos": ["images/8.jpg"],
+    "video": "videos/david.mp4",
+    "shoutouts": [
+      { "from": "Maryam", "message": "You inspire me always." }]
+  },
+  {
+    "name": "Sarah Ahmed",
+    "image": "images/9.jpg",
+    "quote": "Kindness is strength.",
+    "interests": ["Literature", "Drama"],
+    "accomplishments": "Drama Club Lead",
+    "achievements": ["Best Actress", "Poetry Slam Finalist"],
+    "memories": ["Stage Play Night", "Poetry Showcase"],
+    "superlatives": ["Most Friendly"],
+    "social": "#",
+    "photos": ["images/4.jpg", "images/7.jpg"],
+    "video": "",
+      "shoutouts": [
+      { "from": "Maryam", "message": "You inspire me always." }]
+  },
+  {
+    "name": "Michael Chen",
+    "image": "images/6.jpg",
+    "quote": "Always learning.",
+    "interests": ["Science", "Gaming"],
+    "accomplishments": "Quiz Club Star",
+    "achievements": ["National Science Quiz", "Tech Fair"],
+    "memories": ["Quiz Competition", "Tech Tour"],
+    "superlatives": ["🎭 Most Dramatic"],
+    "social": "#",
+    "photos": ["images/4.jpg"],
+    "video": "",
+      "shoutouts": [
+      { "from": "Maryam", "message": "You inspire me always." }]
+  },
+  {
+    "name": "Fatima Bello",
+    "image": "images/3.jpg",
+    "quote": "Peace begins with a smile.",
+    "interests": ["Music", "Cooking"],
+    "accomplishments": "Choir Leader",
+    "achievements": ["Talent Show Winner"],
+    "memories": ["Music Night", "Cooking Contest"],
+    "superlatives": [" 😄 Most Cheerful"],
+    "social": "#",
+    "photos": ["images/1.jpg"],
+    "video": "videos/fatima.mp4",
+      "shoutouts": [
+      { "from": "Maryam", "message": "You inspire me always." }]
+  },
+  {
+    "name": "Daniel Okoro",
+    "image": "images/7.jpg",
+    "quote": "Discipline is the bridge to success.",
+    "interests": ["Math", "Public Speaking"],
+    "accomplishments": "Debate Team Captain",
+    "achievements": ["Best Speaker Award"],
+    "memories": ["Debate Finals", "Math Olympiad"],
+    "superlatives": ["Future President"],
+    "social": "#",
+    "photos": ["images/11.jpg", "images/2.jpg"],
+    "video": "",
+     "shoutouts": [
+      { "from": "Maryam", "message": "You inspire me always." }]
+  },
+  {
+    "name": "Gloria Nwosu",
+    "image": "images/6.jpg",
+    "quote": "Creativity is intelligence having fun.",
+    "interests": ["Writing", "Photography"],
+    "accomplishments": "Yearbook Editor",
+    "achievements": ["Published in School Journal"],
+    "memories": ["Photo Day", "Literary Week"],
+    "superlatives": ["Best Writer"],
+    "social": "#",
+    "photos": ["images/9.jpg"],
+    "video": "",
+     "shoutouts": [
+      { "from": "Maryam", "message": "You inspire me always." }]
+  },
+  {
+    "name": "Emmanuel Uche",
+    "image": "images/5.jpg",
+    "quote": "Hard work beats talent.",
+    "interests": ["Coding", "Music"],
+    "accomplishments": "Hackathon Finalist",
+    "achievements": ["Best App Project"],
+    "memories": ["Tech Week", "Music Talent Show"],
+    "superlatives": ["Most Diligent"],
+    "social": "#",
+    "photos": ["images/6.jpg"],
+    "video": "videos/emmanuel.mp4",
+     "shoutouts": [
+      { "from": "Maryam", "message": "You inspire me always." }]
+  },
+
+  {
+    "name": "Adaeze Obi",
+    "image": "images/2.jpg",
+    "quote": "Be yourself; everyone else is taken.",
+    "interests": ["Fashion", "Blogging"],
+    "accomplishments": "Style Icon of the Year",
+    "achievements": ["Student Blogger Award"],
+    "memories": ["Fashion Day", "Entrepreneurship Fair"],
+    "superlatives": ["Best Dressed"],
+    "social": "#",
+    "photos": ["images/4.jpg"],
+    "video": "",
+     "shoutouts": [
+      { "from": "Maryam", "message": "You inspire me always." }]
+  },
+  {
+    "name": "Kingsley Adebayo",
+    "image": "images/8.jpg",
+    "quote": "Fear is temporary. Regret is forever.",
+    "interests": ["Adventure", "History"],
+    "accomplishments": "Excursion Organizer",
+    "achievements": ["History Club Lead"],
+    "memories": ["Olumo Rock Trip", "Museum Tour"],
+    "superlatives": ["Explorer Spirit"],
+    "social": "#",
+    "photos": ["images/11.jpg", "images/2.jpg"],
+    "video": "",
+     "shoutouts": [
+      { "from": "Maryam", "message": "You inspire me always." }]
+  },
+  {
+    "name": "Blessing Thomas",
+    "image": "images/5.jpg",
+    "quote": "Smiles make everything better.",
+    "interests": ["Dance", "Comedy"],
+    "accomplishments": "Dance Captain",
+    "achievements": ["Funniest Student"],
+    "memories": ["Cultural Dance Night", "School Awards"],
+    "superlatives": ["Most Entertaining"],
+    "social": "#",
+    "photos": ["images/6.jpg"],
+    "video": "videos/blessing.mp4",
+     "shoutouts": [
+      { "from": "Maryam", "message": "You inspire me always." }]
+  },
+  {
+    "name": "Joshua Yusuf",
+    "image": "images/10.jpg",
+    "quote": "Think big. Start small.",
+    "interests": ["Entrepreneurship", "Tech"],
+    "accomplishments": "Mini CEO Project",
+    "achievements": ["Business Fair Finalist"],
+    "memories": ["Startup Showcase", "Market Simulation"],
+    "superlatives": ["Most Visionary"],
+    "social": "#",
+    "photos": ["images/4.jpg"],
+    "video": "",
+     "shoutouts": [
+      { "from": "Maryam", "message": "You inspire me always." }]
+  },
+  {
+    "name": "Ruth Abiola",
+    "image": "images/7.jpg",
+    "quote": "The future belongs to those who prepare for it.",
+    "interests": ["Law", "Debate"],
+    "accomplishments": "MUN Delegate",
+    "achievements": ["Best Lawyer at Mock Court"],
+    "memories": ["MUN Conference", "Legal Workshop"],
+    "superlatives": ["Future Lawyer"],
+    "social": "#",
+    "photos": ["images/9.jpg"],
+    "video": ""
+    
+  },
+  {
+    "name": "Samuel Edet",
+    "image": "images/4.jpg",
+    "quote": "Silence speaks volumes.",
+    "interests": ["Chess", "Writing"],
+    "accomplishments": "Chess Champion",
+    "achievements": ["Published Short Story"],
+    "memories": ["Chess Tournament", "Library Week"],
+    "superlatives": ["Quiet Genius"],
+    "social": "#",
+    "photos": ["images/1.jpg"],
+    "video": ""
+    
+  },
+  {
+    "name": "Chidinma Okeke",
+    "image": "images/8.jpg",
+    "quote": "Love. Laugh. Learn.",
+    "interests": ["Volunteering", "Art"],
+    "accomplishments": "Charity Club Leader",
+    "achievements": ["Best Charity Organizer"],
+    "memories": ["Outreach Day", "Fundraiser Gala"],
+    "superlatives": ["Most Kindhearted"],
+    "social": "#",
+    "photos": ["images/9.jpg"],
+    "video": ""
+     
+  },
+  {
+    "name": "Victor Ade",
+    "image": "images/3.jpg",
+    "quote": "Rise by lifting others.",
+    "interests": ["Sports", "Music"],
+    "accomplishments": "Drumline Captain",
+    "achievements": ["Best Performer at Music Night"],
+    "memories": ["Drum Showcase", "Sports Day"],
+    "superlatives": ["Most Spirited"],
+    "social": "#",
+    "photos": ["images/6.jpg"],
+    "video": ""
+  },
+  {
+    "name": "Esther Onuoha",
+    "image": "images/2.jpg",
+    "quote": "Faith over fear.",
+    "interests": ["Singing", "Spoken Word"],
+    "accomplishments": "School Anthem Soloist",
+    "achievements": ["Voice of the Year"],
+    "memories": ["Choir Tour", "Open Mic Night"],
+    "superlatives": [" Best Vocalist"],
+    "social": "#",
+    "photos": ["images/11.jpg"],
+    "video": "videos/esther.mp4"
+  },
+  {
+    "name": "Ahmed Salisu",
+    "image": "images/7.jpg",
+    "quote": "Be the change.",
+    "interests": ["Politics", "Science"],
+    "accomplishments": "Student Council Leader",
+    "achievements": ["Leadership Award"],
+    "memories": ["Election Debate", "Science Symposium"],
+    "superlatives": ["Most Influential"],
+    "social": "#",
+    "photos": ["images/9.jpg"],
+    "video": ""
+  }
+]

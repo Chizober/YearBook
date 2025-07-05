@@ -1,0 +1,725 @@
+
+    *{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    .quote-bubble {
+      background: #fff;
+      color: #333;
+      padding: 0.5rem 1rem;
+      border-radius: 15px;
+      position: relative;
+      display: inline-block;
+      max-width: 90%;
+      font-style: italic;
+    }
+    .quote-bubble::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 20px;
+      border-width: 10px 10px 0;
+      border-style: solid;
+      border-color: #fff transparent transparent transparent;
+    }
+    .superlatives {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      text-align: left;
+      list-style: none;
+      padding: 0;
+      color: #ffeaa7;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    header, footer {
+      background: #2c3e50;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    .logo {
+      width: 80px;
+      margin-bottom: 10px;
+    }
+    h1, h2 {
+      margin: 0.5rem 0;
+    }
+   .title{
+    text-align: center;
+    color:#333;
+    margin:2rem 0;
+   }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: orange; }
+    }
+    .dark-mode {
+      background: #121212;
+      color: #eee;
+    }
+    .toggle-dark, .toggle-music {
+      position: fixed;
+      top: 10px;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      color: white;
+      z-index: 999;
+    }
+    .toggle-dark {
+      right: 10px;
+      background: #f39c12;
+    }
+    .toggle-music {
+      right: 100px;
+      background:#34495e;
+    }
+    .students-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: .7rem;
+      padding: 2rem;
+    }
+    .student-card {
+      background: white;
+      border-radius: 8px;
+      padding: .5rem;
+      width: 290px;
+      height: 340px; 
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      perspective: 1000px;
+    }
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+    .student-card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 6px;
+    }
+    .card-front img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .card-front h3 {
+      margin-top: 0.5rem;
+    }
+    .card-back {
+      background: #2c3e50;
+      color: white;
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      text-align: center;
+    }
+    .quote-section {
+      background: #ecf0f1;
+      padding: 2rem;
+      text-align: center;
+      font-style: italic;
+    }
+    .quote-section::before {
+      content: "“";
+      font-size: 3rem;
+      color: #f39c12;
+    }
+    .quote-section::after {
+      content: "”";
+      font-size: 3rem;
+      color: #f39c12;
+    }
+    .animated-quote {
+      font-size: 1.2rem;
+      animation: fadeIn 3s ease-in-out infinite alternate;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+     
+.controls {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.controls input,
+.controls select {
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px;
+    width: 80%;
+    max-width: 300px;
+    border:1px solid #444;
+}
+.swiper {
+      width: 90%;
+      max-width: 800px;
+      margin: 2rem auto;
+    }
+    .swiper-slide {
+      position: relative;
+    }
+    .swiper-slide img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .slide-caption {
+      position: absolute;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      width: 100%;
+      text-align: center;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border-radius: 0 0 10px 10px;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: #f39c12;
+      font-size: 1.2rem;
+    }
+    .swiper-pagination-bullet {
+      background: #f39c12;
+      opacity: 1;
+      position:relative;
+    bottom:2rem;
+    }
+    .swiper-pagination-bullet-active {
+      background: #d35400;
+    }
+.student-card:hover {
+    /* transform: translateY(-5px); */
+    transform: scale(1.05);
+}
+
+ .memory-timeline {
+      background: #fff;
+      padding: 2rem;
+      margin: 2rem;
+       border-left: 4px solid #f39c12;
+    }
+   
+     .shoutout {
+      background: #f9f9f9;
+      border-left: 4px solid #ffa500;
+      padding: 0.5rem 1rem;
+      margin: 0.5rem 0;
+      border-radius: 5px;
+    }
+     h1, h2 {
+      margin: 0.5rem 0;
+    }
+    .memory-timeline h2 , #shoutouts h2{
+      margin-bottom: 1rem;
+    }
+    .timeline-event {
+      margin-bottom: 1rem;
+    }
+    
+    .quote-section {
+      background: #ecf0f1;
+      padding: 1.5rem;
+      text-align: center;
+      font-style: italic;
+      margin:40px 0px;
+    }
+    .quote-section::before {
+      content: "“";
+      font-size: 3rem;
+      color: #f39c12;
+    }
+    .quote-section::after {
+      content: "”";
+      font-size: 3rem;
+      color: #f39c12;
+    }
+    .animated-quote {
+      font-size: 1.2rem;
+      animation: fadeIn 3s ease-in-out infinite alternate;
+      color:#2c3e50;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .video-section {
+      text-align: center;
+      padding: 2rem;
+    }
+    .video-section iframe {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    body.dark {
+    background-color: #121212;
+    color: #eaeaea;
+}
+
+.pagination {
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.pagination button {
+    padding: 8px 12px;
+    margin: 0 4px;
+    background: #ddd;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagination button.active {
+    background:#2c3e50;
+    color: #fff;
+}
+
+/* 🌙 Dark mode */
+body.dark {
+    background-color: #121212;
+    color: #eaeaea;
+}
+
+body.dark header h1,
+body.dark .name,
+body.dark header a {
+    color: #f0f0f0;
+}
+
+body.dark .student-card, body.dark .memory-timeline,body.dark .quote-section{
+    background: #1e1e1e;
+    color: #fff;
+}
+
+body.dark .pagination button {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark .pagination button.active {
+    background-color: orange;
+    color: #000;
+}
+.name{
+    text-align:center;
+    margin-top:30px;
+    margin-bottom: -5px;
+    color:#333;
+}
+.two-column {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 25px 0;
+    align-items: center;
+    height: 400px;
+}
+
+.two-column .column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.image-column img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.text-column {
+    padding: 10px;
+}
+
+@media (max-width: 400px) {
+    .two-column {
+        flex-direction: column;
+        text-align: center;
+        gap:0px;
+    }
+    .image-column img {
+    max-width: 100%;
+}
+.two-column .column {
+    width: 100%;
+}
+}
+.info{
+    margin-bottom:20px;
+}
+a {
+    text-decoration: none;
+    color:#333;
+    font-weight: light;
+    padding:8px 15px;
+    color:#f39c12;
+    font-weight: bold;
+}
+a:hover{
+    color: #ffff;
+     background-color: #f39c12;
+}
+.two-column a {
+    text-decoration: none;
+    color:#333;
+    font-weight: light;
+    padding:8px 15px;
+     background-color: #f39c12;
+    color:#fff;
+}
+.two-column a:hover{
+    color: #f39c12;
+    background-color: transparent;
+    border: 2px solid #f39c12;
+}
+input:focus,
+select:focus {
+    outline: none;
+}
+.btn-top a{
+    position: fixed;
+    right:1rem;
+    bottom: 1rem;
+}
+.btn-top a:hover{
+    background-color: transparent;
+    color:#f39c12;
+}
+.pagination-controls button {
+  margin: 0 5px;
+  padding: 0.5rem 1rem;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.pagination-controls button:hover {
+  background: #34495e;
+}
+.pagination-controls button[style*='bold'] {
+  background: #f39c12;
+  color: black;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  main, main * {
+    visibility: visible;
+  }
+  main {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 0;
+    background: white;
+  }
+  .toggle-dark, .toggle-music, #downloadBtn {
+    display: none !important;
+  }
+}
+view-profile-link{
+
+font-weight: 100px;
+}
+
+.view-profile-link:hover{
+background:transparent;
+}
+
+#quizSummaryDisplay div:nth-child(even) {
+  background: #f4f4f4;
+}
+.hidden {
+  display: none;
+}
+.quiz-box {
+  margin-bottom: 1rem;
+  border-left: 5px solid #4caf50;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 5px;
+  width:95%;
+  margin:0px auto 1rem  auto;
+}
+#quizSummaryDisplay {
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+/* ======== YEARBOOK FUN FEATURES ======== */
+
+section.yearbook-feature {
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 10px;
+  max-width: 800px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.05);
+}
+
+section.yearbook-feature h3,
+section.yearbook-feature h4 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* 🎵 Music Selector */
+#musicSelector {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-weight: bold;
+  background: #f9f9f9;
+}
+
+/* 🖋️ Collaborative Storyboard */
+#storyInput {
+  width: 100%;
+  padding: 0.6rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+}
+
+#storyBoard p {
+  background: #f0f8ff;
+  padding: 0.5rem 1rem;
+  margin: 0.3rem 0;
+  border-left: 4px solid #2196F3;
+  border-radius: 5px;
+  font-style: italic;
+}
+
+/* 🎲 Nostalgia Generator */
+#memoryDisplay {
+  margin-top: 0.7rem;
+  background: #fff3cd;
+  padding: 1rem;
+  border-left: 5px solid #ffc107;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* 🗳️ Polls */
+#pollOptions label {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+#pollResults {
+  margin-top: 1rem;
+  background: #e8f5e9;
+  padding: 1rem;
+  border-left: 4px solid green;
+  border-radius: 5px;
+}
+
+/* 💬 Guestbook */
+#guestbookSection input {
+  display: block;
+  width: 100%;
+  margin: 0.3rem 0;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#guestbookSection button {
+  background: #ff9800;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+#guestbookEntries div {
+  background: #f1f1f1;
+  margin: 0.4rem 0;
+  padding: 0.6rem;
+  border-left: 4px solid #ff9800;
+  border-radius: 5px;
+}
+
+/* ⭐ Spotlight */
+#spotlight {
+  text-align: center;
+  background: linear-gradient(to right, #ffe0b2, #fff3e0);
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+#spotlightContent img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+#spotlightContent p {
+  font-size: 1.1rem;
+  color: #444;
+}
+#bgMusic {
+      width: 100%;
+      margin-top: 1rem;
+}
+/* ─── Scrollable containers ─── */
+    #storyBoard, #guestbookEntries, #pollResults {
+      max-height: 300px;
+      overflow-y: auto;
+      padding-right: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background: #fafafa;
+      margin-top: 0.5rem;
+    }
+
+    /* ─── Show More buttons ─── */
+    .show-more-btn {
+      display: block;
+      margin: 0.5rem auto;
+      padding: 0.4rem 1rem;
+      background: #2196F3;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    /* ensure the section still behaves normally */
+#musicSection {
+  position: relative;
+  z-index: 1; /* base layer */
+}
+
+/* audio wrapper sits above everything else in the section */
+.audio-wrapper {
+  position: relative;
+  z-index: 10;
+  margin-top: 1rem;
+}
+
+/* make the audio bar full width */
+#audioWrapper audio,
+.audio-wrapper audio {
+  width: 100%;
+  display: block;
+}
+/* students page */
+ .student-detail {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 5px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      width:95%;
+      margin:auto;
+    }
+
+    .student-image img {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .student-info h2 {
+      margin: 1rem 0 0.5rem;
+    }
+
+    .student-info p {
+      line-height: 1.2;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 1rem;
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: bold;
+    }
+    .shoutouts-section {
+      margin-top: 2rem;
+    }
+    .shoutout {
+      background: #f9f9f9;
+      border-left: 4px solid #ffa500;
+      padding: 0.5rem 1rem;
+      margin: 0.5rem 0;
+      border-radius: 5px;
+    }
+    .messages {
+      margin-top: 1rem;
+    }
+    .messages input {
+      padding: 0.5rem;
+      margin: 0.3rem 0;
+      width: 100%;
+      max-width: 300px;
+    }
+    .messages button {
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: #ffa500;
+      border: none;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .student-detail {
+        grid-template-columns: 1fr;
+      }
+
+      .messages input {
+        max-width: 100%;
+      }
+    }

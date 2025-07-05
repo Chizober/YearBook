@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class of 2025 Yearbook</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <style>
+    
+    *{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    .quote-bubble {
+      background: #fff;
+      color: #333;
+      padding: 0.5rem 1rem;
+      border-radius: 15px;
+      position: relative;
+      display: inline-block;
+      max-width: 90%;
+      font-style: italic;
+    }
+    .quote-bubble::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 20px;
+      border-width: 10px 10px 0;
+      border-style: solid;
+      border-color: #fff transparent transparent transparent;
+    }
+    .superlatives {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      text-align: left;
+      list-style: none;
+      padding: 0;
+      color: #ffeaa7;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    header, footer {
+      background: #2c3e50;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    .logo {
+      width: 80px;
+      margin-bottom: 10px;
+    }
+    h1, h2 {
+      margin: 0.5rem 0;
+    }
+   .title{
+    text-align: center;
+    color:#333;
+    margin:2rem 0;
+   }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: orange; }
+    }
+    .dark-mode {
+      background: #121212;
+      color: #eee;
+    }
+    .toggle-dark, .toggle-music {
+      position: fixed;
+      top: 10px;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      color: white;
+      z-index: 999;
+    }
+    .toggle-dark {
+      right: 10px;
+      background: #f39c12;
+    }
+    .toggle-music {
+      right: 100px;
+      background:#34495e;
+    }
+    .students-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: .7rem;
+      padding: 2rem;
+    }
+    .student-card {
+      background: white;
+      border-radius: 8px;
+      padding: .5rem;
+      width: 290px;
+      height: 340px; 
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      perspective: 1000px;
+    }
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+    .student-card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 6px;
+    }
+    .card-front img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .card-front h3 {
+      margin-top: 0.5rem;
+    }
+    .card-back {
+      background: #2c3e50;
+      color: white;
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      text-align: center;
+    }
+    .quote-section {
+      background: #ecf0f1;
+      padding: 2rem;
+      text-align: center;
+      font-style: italic;
+    }
+    .quote-section::before {
+      content: "“";
+      font-size: 3rem;
+      color: #f39c12;
+    }
+    .quote-section::after {
+      content: "”";
+      font-size: 3rem;
+      color: #f39c12;
+    }
+    .animated-quote {
+      font-size: 1.2rem;
+      animation: fadeIn 3s ease-in-out infinite alternate;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+     
+.controls {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.controls input,
+.controls select {
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px;
+    width: 80%;
+    max-width: 300px;
+    border:1px solid #444;
+}
+.swiper {
+      width: 90%;
+      max-width: 800px;
+      margin: 2rem auto;
+    }
+    .swiper-slide {
+      position: relative;
+    }
+    .swiper-slide img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .slide-caption {
+      position: absolute;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      width: 100%;
+      text-align: center;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border-radius: 0 0 10px 10px;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: #f39c12;
+      font-size: 1.2rem;
+    }
+    .swiper-pagination-bullet {
+      background: #f39c12;
+      opacity: 1;
+      position:relative;
+    bottom:2rem;
+    }
+    .swiper-pagination-bullet-active {
+      background: #d35400;
+    }
+.student-card:hover {
+    /* transform: translateY(-5px); */
+    transform: scale(1.05);
+}
+
+ .memory-timeline {
+      background: #fff;
+      padding: 2rem;
+      margin: 2rem;
+       border-left: 4px solid #f39c12;
+    }
+   
+     .shoutout {
+      background: #f9f9f9;
+      border-left: 4px solid #ffa500;
+      padding: 0.5rem 1rem;
+      margin: 0.5rem 0;
+      border-radius: 5px;
+    }
+     h1, h2 {
+      margin: 0.5rem 0;
+    }
+    .memory-timeline h2 , #shoutouts h2{
+      margin-bottom: 1rem;
+    }
+    .timeline-event {
+      margin-bottom: 1rem;
+    }
+    
+    .quote-section {
+      background: #ecf0f1;
+      padding: 1.5rem;
+      text-align: center;
+      font-style: italic;
+      margin:40px 0px;
+    }
+    .quote-section::before {
+      content: "“";
+      font-size: 3rem;
+      color: #f39c12;
+    }
+    .quote-section::after {
+      content: "”";
+      font-size: 3rem;
+      color: #f39c12;
+    }
+    .animated-quote {
+      font-size: 1.2rem;
+      animation: fadeIn 3s ease-in-out infinite alternate;
+      color:#2c3e50;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .video-section {
+      text-align: center;
+      padding: 2rem;
+    }
+    .video-section iframe {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    body.dark {
+    background-color: #121212;
+    color: #eaeaea;
+}
+
+.pagination {
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.pagination button {
+    padding: 8px 12px;
+    margin: 0 4px;
+    background: #ddd;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagination button.active {
+    background:#2c3e50;
+    color: #fff;
+}
+
+/* 🌙 Dark mode */
+body.dark {
+    background-color: #121212;
+    color: #eaeaea;
+}
+
+body.dark header h1,
+body.dark .name,
+body.dark header a {
+    color: #f0f0f0;
+}
+
+body.dark .student-card, body.dark .memory-timeline,body.dark .quote-section{
+    background: #1e1e1e;
+    color: #fff;
+}
+
+body.dark .pagination button {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark .pagination button.active {
+    background-color: orange;
+    color: #000;
+}
+.name{
+    text-align:center;
+    margin-top:30px;
+    margin-bottom: -5px;
+    color:#333;
+}
+.two-column {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 25px 0;
+    align-items: center;
+    height: 400px;
+}
+
+.two-column .column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.image-column img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.text-column {
+    padding: 10px;
+}
+
+@media (max-width: 400px) {
+    .two-column {
+        flex-direction: column;
+        text-align: center;
+        gap:0px;
+    }
+    .image-column img {
+    max-width: 100%;
+}
+.two-column .column {
+    width: 100%;
+}
+}
+.info{
+    margin-bottom:20px;
+}
+a {
+    text-decoration: none;
+    color:#333;
+    font-weight: light;
+    padding:8px 15px;
+    color:#f39c12;
+    font-weight: bold;
+}
+a:hover{
+    color: #ffff;
+     background-color: #f39c12;
+}
+.two-column a {
+    text-decoration: none;
+    color:#333;
+    font-weight: light;
+    padding:8px 15px;
+     background-color: #f39c12;
+    color:#fff;
+}
+.two-column a:hover{
+    color: #f39c12;
+    background-color: transparent;
+    border: 2px solid #f39c12;
+}
+input:focus,
+select:focus {
+    outline: none;
+}
+.btn-top a{
+    position: fixed;
+    right:1rem;
+    bottom: 1rem;
+}
+.btn-top a:hover{
+    background-color: transparent;
+    color:#f39c12;
+}
+.pagination-controls button {
+  margin: 0 5px;
+  padding: 0.5rem 1rem;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.pagination-controls button:hover {
+  background: #34495e;
+}
+.pagination-controls button[style*='bold'] {
+  background: #f39c12;
+  color: black;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  main, main * {
+    visibility: visible;
+  }
+  main {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 0;
+    background: white;
+  }
+  .toggle-dark, .toggle-music, #downloadBtn {
+    display: none !important;
+  }
+}
+view-profile-link{
+
+font-weight: 100px;
+}
+
+.view-profile-link:hover{
+background:transparent;
+}
+
+#quizSummaryDisplay div:nth-child(even) {
+  background: #f4f4f4;
+}
+.hidden {
+  display: none;
+}
+.quiz-box {
+  margin-bottom: 1rem;
+  border-left: 5px solid #4caf50;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 5px;
+  width:95%;
+  margin:0px auto 1rem  auto;
+}
+#quizSummaryDisplay {
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+/* ======== YEARBOOK FUN FEATURES ======== */
+
+section.yearbook-feature {
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 10px;
+  max-width: 800px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.05);
+}
+
+section.yearbook-feature h3,
+section.yearbook-feature h4 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* 🎵 Music Selector */
+#musicSelector {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-weight: bold;
+  background: #f9f9f9;
+}
+
+/* 🖋️ Collaborative Storyboard */
+#storyInput {
+  width: 100%;
+  padding: 0.6rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+}
+
+#storyBoard p {
+  background: #f0f8ff;
+  padding: 0.5rem 1rem;
+  margin: 0.3rem 0;
+  border-left: 4px solid #2196F3;
+  border-radius: 5px;
+  font-style: italic;
+}
+
+/* 🎲 Nostalgia Generator */
+#memoryDisplay {
+  margin-top: 0.7rem;
+  background: #fff3cd;
+  padding: 1rem;
+  border-left: 5px solid #ffc107;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* 🗳️ Polls */
+#pollOptions label {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+#pollResults {
+  margin-top: 1rem;
+  background: #e8f5e9;
+  padding: 1rem;
+  border-left: 4px solid green;
+  border-radius: 5px;
+}
+
+/* 💬 Guestbook */
+#guestbookSection input {
+  display: block;
+  width: 100%;
+  margin: 0.3rem 0;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#guestbookSection button {
+  background: #ff9800;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+#guestbookEntries div {
+  background: #f1f1f1;
+  margin: 0.4rem 0;
+  padding: 0.6rem;
+  border-left: 4px solid #ff9800;
+  border-radius: 5px;
+}
+
+/* ⭐ Spotlight */
+#spotlight {
+  text-align: center;
+  background: linear-gradient(to right, #ffe0b2, #fff3e0);
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+#spotlightContent img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+#spotlightContent p {
+  font-size: 1.1rem;
+  color: #444;
+}
+#bgMusic {
+      width: 100%;
+      margin-top: 1rem;
+}
+/* ─── Scrollable containers ─── */
+    #storyBoard, #guestbookEntries, #pollResults {
+      max-height: 300px;
+      overflow-y: auto;
+      padding-right: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background: #fafafa;
+      margin-top: 0.5rem;
+    }
+
+    /* ─── Show More buttons ─── */
+    .show-more-btn {
+      display: block;
+      margin: 0.5rem auto;
+      padding: 0.4rem 1rem;
+      background: #2196F3;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    /* ensure the section still behaves normally */
+#musicSection {
+  position: relative;
+  z-index: 1; /* base layer */
+}
+
+/* audio wrapper sits above everything else in the section */
+.audio-wrapper {
+  position: relative;
+  z-index: 10;
+  margin-top: 1rem;
+}
+
+/* make the audio bar full width */
+#audioWrapper audio,
+.audio-wrapper audio {
+  width: 100%;
+  display: block;
+}
+/* students page */
+ .student-detail {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 5px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      width:95%;
+      margin:auto;
+    }
+
+    .student-image img {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .student-info h2 {
+      margin: 1rem 0 0.5rem;
+    }
+
+    .student-info p {
+      line-height: 1.2;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 1rem;
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: bold;
+    }
+    .shoutouts-section {
+      margin-top: 2rem;
+    }
+    .shoutout {
+      background: #f9f9f9;
+      border-left: 4px solid #ffa500;
+      padding: 0.5rem 1rem;
+      margin: 0.5rem 0;
+      border-radius: 5px;
+    }
+    .messages {
+      margin-top: 1rem;
+    }
+    .messages input {
+      padding: 0.5rem;
+      margin: 0.3rem 0;
+      width: 100%;
+      max-width: 300px;
+    }
+    .messages button {
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: #ffa500;
+      border: none;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .student-detail {
+        grid-template-columns: 1fr;
+      }
+
+      .messages input {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="toggle-dark" onclick="toggleDarkMode()">🌙 Toggle</button>
+  <button class="toggle-music" onclick="toggleMusic()">🎵 Music</button>
+  <!-- <audio id="bgMusic" loop>
+    <source src="music/Die With A Smile - (Raag.Fm).mp3" type="audio/mpeg" />
+  </audio> -->
+
+  <header>
+    <img src="images/logo.jpg" alt="School Logo" class="logo" />
+    <h1>Class of 2025 - SS3 Yearbook</h1>
+   <p>Celebrating Our Journey Together</p>
+
+  
+  </header>
+
+  <main>
+     <section class="stats-section" style="padding: 2rem; text-align: center; background: #ffffff;">
+      <h2>🎓 Fun Stats</h2>
+      <div id="funStats" style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; font-size: 1.1rem;"></div>
+    </section>
+    <section class="students-grid" id="studentsContainer"></section>
+
+    <div id="pagination" style="text-align:center; margin: 2rem;" class="pagination-controls "></div>
+
+
+<section class="yearbook-feature" id="musicSection">
+  <h3>🎵 Choose Background Music</h3>
+  <select id="musicSelector">
+    <option value="">— Select a track —</option>
+    <option value="song1.mp3">Uplifting Theme</option>
+    <option value="song2.mp3">Chill Vibes</option>
+    <option value="song3.mp3">Class Anthem</option>
+  </select>
+  <audio id="bgMusic" controls loop style="width:100%; margin-top:1rem;">
+    Your browser does not support audio.
+  </audio>
+</section>
+
+
+ <h2 style="text-align: center;">💬 Student Quotes</h2>
+<section class="quote-section">
+  <div class="animated-quote">
+    <p id="quoteText" class="quoteRotator">Loading quote...</p>
+    <p id="quoteAuthor" style="font-weight: bold; margin-top: 0.5rem;"></p>
+  </div>
+</section>
+
+
+    <section>
+  <h2 style="text-align:center;">📸 Memory Carousel</h2>
+  <div class="swiper">
+    <div class="swiper-wrapper" id="memoryCarousel"></div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</section>
+
+<section class="memory-timeline">
+      <h2>🎉 Timeline of Memorable Events</h2>
+      <div class="timeline-event">📅 First Day of SS1 - Sept 2019</div>
+      <div class="timeline-event">🏃‍♀️ Inter-house Sports - Feb 2022</div>
+      <div class="timeline-event">🎓 WAEC Begins - May 2025</div>
+      <div class="timeline-event">🪩 Valedictory Ceremony - July 2025</div>
+    </section>
+    <h2 class="title">🧠 Memory Quiz</h2>
+    <div id="quizSummaryDisplay"></div> 
+ <div style="text-align: center; margin: 2rem;">
+      <button id="downloadBtn" style="padding: 0.7rem 1.5rem; background: #2c3e50; color: white; border: none; border-radius: 5px;">📄 Download Yearbook as PDF</button>
+    </div>
+ <section class="yearbook-feature">
+    <h3>✍️ Collaborative Storyboard</h3>
+    <textarea id="storyInput" rows="3" placeholder="Add your line..."></textarea>
+    <button onclick="addToStoryboard()">Add to Story</button>
+
+    <div id="storyBoard"></div>
+    <button id="storyMoreBtn" class="show-more-btn">Show More</button>
+  </section>
+
+
+ <section class="yearbook-feature" id="pollSection">
+    <h3>🏆 Vote: Funniest Student</h3>
+    <div id="pollOptions"></div>
+    <button onclick="vote()">Submit Vote</button>
+    <div id="pollResults"></div>
+    <button id="pollMoreBtn" class="show-more-btn">Show More Results</button>
+  </section>
+
+<section id="shoutouts">
+    <h2>📣 Shout-Outs from Classmates</h2>
+    <div id="shoutoutList">Loading...</div>
+    <div style="text-align:center"><button id="showMoreBtn">⬇️ Show More</button></div>
+  </section>
+  <section class="yearbook-feature" id="guestbookSection">
+    <h3>👋 Guestbook</h3>
+    <input type="text" id="guestName" placeholder="Your Name">
+    <input type="text" id="guestMsg" placeholder="Your Message">
+    <button onclick="signGuestbook()">Sign Guestbook</button>
+
+    <div id="guestbookEntries"></div>
+    <button id="guestMoreBtn" class="show-more-btn">Show More Entries</button>
+  </section>
+
+  <h2>🎲 Nostalgia Generator</h2>
+  <button onclick="showMemory()">🎖 Nostalgia Generator</button>
+<div id="memoryDisplay"></div>
+<section class="yearbook-feature" id="spotlight">
+<h2>⭐ Student of the Day / Spotlight</h2>
+<div id="spotlight">
+  <h2>🌟 Student of the Day</h2>
+  <div id="spotlightContent"></div>
+  <button onclick="pickSpotlight()">Next!</button>
+</div>
+</section>
+<section class="yearbook-feature" id="qaSection">
+  <h3>🤖 Ask a Question</h3>
+  <input type="text" id="qaInput" placeholder="e.g. Who won the Science Fair?" style="width:80%; padding:0.5rem;">
+  <button id="qaSubmit" style="padding:0.5rem 1rem;">Ask</button>
+  <div id="qaResponse" style="margin-top:1rem; padding:1rem; background:#f1f1f1; border-radius:5px;"></div>
+</section>
+
+    <section class="video-section">
+      <h2>🎥 Message from the Principal</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/yourvideoID" frameborder="0" allowfullscreen></iframe>
+    </section>
+   
+
+   
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Your School Name | Designed with ❤️ by ICT Club</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="env.js"></script>
+<!-- then your chatbot code can use window.__ENV__.GOOGLE_API_KEY -->
+
+  <script>
+    
+
+    let studentsData = [];
+  let currentPage = 1;
+  const studentsPerPage = 6;
+
+  function loadMemoriesCarousel() {
+    const swiperWrapper = document.getElementById("memoryCarousel");
+    swiperWrapper.innerHTML = "";
+
+    studentsData.forEach(student => {
+      const photos = student.photos || [];
+      const memories = student.memories || [];
+
+      const minLength = Math.min(photos.length, memories.length);
+      for (let i = 0; i < minLength; i++) {
+        const slide = document.createElement("div");
+        slide.className = "swiper-slide";
+        slide.innerHTML = `
+          <img src="${photos[i]}" alt="Memory image of ${student.name}" />
+          <div class="slide-caption">${memories[i]}</div>
+        `;
+        swiperWrapper.appendChild(slide);
+      }
+    });
+
+    new Swiper('.swiper', {
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  }
+
+  async function loadStudents() {
+    const stats = document.getElementById("funStats");
+    const res = await fetch("students.json");
+    studentsData = await res.json();
+    allShoutouts = [];
+    let quoteCount = 0;
+    let subjectCount = {};
+    let superlativeSet = new Set();
+
+    studentsData.forEach(student => {
+      if (student.quote) quoteCount++;
+      if (student.bestSubject) {
+        subjectCount[student.bestSubject] = (subjectCount[student.bestSubject] || 0) + 1;
+      }
+      if (student.superlatives) {
+        student.superlatives.forEach(s => superlativeSet.add(s));
+      }
+    });
+
+    const topSubjects = Object.entries(subjectCount)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 3)
+      .map(([s, c]) => `${s} (${c})`).join(", ");
+
+    // stats.innerHTML = `
+    //   <div><strong>Total Students:</strong><br>${studentsData.length}</div>
+    // `;
+
+    const filters = document.createElement("div");
+    filters.style = "text-align:center; margin:1rem;";
+    filters.innerHTML = `
+      <div class="controls">
+        <input type="text" id="nameFilter" placeholder="Search students..." />
+        <select id="superlativeFilter">
+          <option value="all">All Characters</option>
+          ${[...superlativeSet].map(s => `<option value="${s}">${s}</option>`).join('')}
+        </select>
+      </div>
+    `;
+    stats.insertAdjacentElement("beforebegin", filters);
+
+    document.getElementById("nameFilter").addEventListener("input", () => {
+      currentPage = 1;
+      renderFilteredStudents();
+    });
+    document.getElementById("superlativeFilter").addEventListener("change", () => {
+      currentPage = 1;
+      renderFilteredStudents();
+    });
+
+    renderFilteredStudents();
+    loadMemoriesCarousel();
+    rotateQuotesAutomatically();
+    loadShoutoutsFromLocalStorage(); // ✅ Correct place
+  }
+
+  let allShoutouts = [];
+  let shoutoutDisplayLimit = 5;
+
+ function loadShoutoutsFromLocalStorage() {
+  const shoutoutMap = JSON.parse(localStorage.getItem("shoutouts") || "{}");
+  let collected = [];
+
+  for (const [to, list] of Object.entries(shoutoutMap)) {
+    list.forEach(s => collected.push({ ...s, to }));
+  }
+
+  allShoutouts = collected.reverse(); // newest first
+  renderShoutoutsList();
+}
+
+
+  function renderShoutoutsList() {
+  const container = document.getElementById("shoutoutList");
+  const visibleShouts = allShoutouts.slice(0, shoutoutDisplayLimit);
+
+  container.innerHTML = visibleShouts.map(s => {
+    const date = s.timestamp 
+      ? new Date(s.timestamp).toLocaleString() 
+      : 'Time unknown';
+    return `<div class="shoutout">
+      <strong>${s.from}:</strong> ${s.message}<br>
+      <small style="color:gray;">🕒 ${date}</small>
+    </div>
+    `;
+  })
+  .join("");
+
+  document.getElementById("showMoreBtn").style.display =
+    shoutoutDisplayLimit >= allShoutouts.length ? "none" : "inline-block";
+}
+
+
+  document.getElementById("showMoreBtn").addEventListener("click", () => {
+    shoutoutDisplayLimit += 5;
+    renderShoutoutsList();
+  });
+
+  function rotateQuotesAutomatically() {
+    const quoteTextEl = document.getElementById("quoteText");
+    const quoteAuthorEl = document.getElementById("quoteAuthor");
+
+    const quotes = studentsData
+      .filter(student => student.quote && student.quote.trim().length > 0)
+      .map(student => ({
+        quote: student.quote.trim(),
+        author: student.name
+      }));
+
+    if (quotes.length === 0) {
+      quoteTextEl.textContent = "No quotes available.";
+      quoteAuthorEl.textContent = "";
+      return;
+    }
+
+    let quoteIndex = 0;
+
+    function showQuote(index) {
+      quoteTextEl.textContent = `“${quotes[index].quote}”`;
+      quoteAuthorEl.textContent = `— ${quotes[index].author}`;
+    }
+
+    showQuote(quoteIndex);
+
+    setInterval(() => {
+      quoteIndex = (quoteIndex + 1) % quotes.length;
+      showQuote(quoteIndex);
+    }, 5000);
+  }
+
+  function renderFilteredStudents() {
+    const name = document.getElementById("nameFilter")?.value.toLowerCase() || '';
+    const superlative = document.getElementById("superlativeFilter")?.value || 'all';
+
+    const filtered = studentsData.filter(student => {
+      const hasName = student.name.toLowerCase().includes(name);
+      const hasSuper = superlative === 'all' || (student.superlatives || []).includes(superlative);
+      return hasName && hasSuper;
+    });
+
+    renderPaginatedStudents(filtered);
+  }
+
+  function renderPaginatedStudents(filtered) {
+    const container = document.getElementById("studentsContainer");
+    const start = (currentPage - 1) * studentsPerPage;
+    const end = start + studentsPerPage;
+    const currentStudents = filtered.slice(start, end);
+
+    container.innerHTML = "";
+
+    currentStudents.forEach((student, i) => {
+      const card = document.createElement("div");
+      card.className = "student-card";
+      card.dataset.name = student.name || "";
+      card.dataset.subject = student.bestSubject || "";
+      card.dataset.superlatives = (student.superlatives || []).join(",");
+
+      card.innerHTML = `
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="${student.image}" alt="${student.name}">
+            <h3>${student.name}</h3>
+          </div>
+          <div class="card-back">
+            <p class="quote-bubble">“${student.quote || "No quote"}”</p>
+            <ul class="superlatives">
+              ${(student.superlatives || []).map(s => `<li>${s}</li>`).join('')}
+            </ul>
+            <a href="students.html?id=${i}" class="view-profile-link">🔍 View Profile</a>
+          </div>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+
+    renderPaginationControls(filtered.length);
+  }
+
+  function renderPaginationControls(totalCount) {
+    const pagination = document.getElementById("pagination");
+    const totalPages = Math.ceil(totalCount / studentsPerPage);
+
+    if (totalPages <= 1) {
+      pagination.innerHTML = "";
+      return;
+    }
+
+    let buttons = "";
+
+    if (currentPage > 1) {
+      buttons += `<button onclick="goToPage(${currentPage - 1})">⬅️ Prev</button>`;
+    }
+
+    for (let i = 1; i <= totalPages; i++) {
+      buttons += `<button onclick="goToPage(${i})" ${i === currentPage ? 'style="font-weight:bold;"' : ''}>${i}</button>`;
+    }
+
+    if (currentPage < totalPages) {
+      buttons += `<button onclick="goToPage(${currentPage + 1})">Next ➡️</button>`;
+    }
+
+    pagination.innerHTML = buttons;
+  }
+
+  function goToPage(pageNum) {
+    currentPage = pageNum;
+    renderFilteredStudents();
+  }
+
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+  }
+
+  function toggleMusic() {
+    const music = document.getElementById("bgMusic");
+    music.paused ? music.play() : music.pause();
+  }
+
+  // ✅ Load only once
+  loadStudents();
+   function loadQuizSummaryToIndex() {
+  const summaryContainer = document.getElementById("quizSummaryDisplay");
+  let output = "";
+  let allResults = [];
+
+  for (let key in localStorage) {
+    if (key.startsWith("memoryQuiz_")) {
+      const data = JSON.parse(localStorage.getItem(key));
+      if (data && data.name && Array.isArray(data.answers)) {
+        allResults.push(data);
+      }
+    }
+  }
+
+  // Sort by newest if timestamp is added in the future
+  allResults = allResults.slice(-3); // show last 3
+  output = allResults.map(data => `
+   
+    <div class="quiz-box">
+    
+      <h3>${data.name}'s Memory Quiz</h3>
+      <p><strong>Score:</strong> ${data.score} / ${data.total}</p>
+      <ul>
+        ${data.answers.map(a => `
+          <li><strong>${a.question}</strong><br>
+          ✅ Your Answer: ${a.selected}<br>
+        `).join("")}
+      </ul>
+    </div>
+  `).join("");
+
+  summaryContainer.innerHTML = output || "<p>No memory quizzes yet.</p>";
+
+  // Optional: Add “See All” button
+}
+
+
+  // Load on page ready
+  window.addEventListener("DOMContentLoaded", loadQuizSummaryToIndex);
+
+
+const musicSelector = document.getElementById('musicSelector');
+const musicPlayer   = document.getElementById('bgMusic');
+
+// On selection change…
+musicSelector.addEventListener('change', () => {
+  const file = musicSelector.value;
+  if (!file) return;
+  const path = 'music/' + file;
+  musicPlayer.src = path;    // set src directly
+  musicPlayer.load();         // reload with new source
+  musicPlayer.play()          // attempt to play
+    .catch(() => {/* user must click if autoplay is blocked */});
+  localStorage.setItem('bgMusicChoice', file);
+});
+
+// On page load…
+window.addEventListener('DOMContentLoaded', () => {
+  const saved = localStorage.getItem('bgMusicChoice');
+  if (saved) {
+    musicSelector.value = saved;
+    musicPlayer.src = 'music/' + saved;  // set src before anything else
+    musicPlayer.load();
+    // try to play; if blocked, user can press play
+    musicPlayer.play().catch(()=>{/* silent */});
+  }
+});
+
+// ─── Collaborative Storyboard w/ “Show More” ───
+    let storyLines = JSON.parse(localStorage.getItem('storyBoard')||'[]');
+    let storyVisible = 5;
+    function loadStory() {
+      const slice = storyLines.slice(-storyVisible);
+      document.getElementById('storyBoard').innerHTML =
+        slice.map((l,i)=>`<p>${storyLines.length - slice.length + i +1}. ${l}</p>`).join('');
+      document.getElementById('storyMoreBtn')
+        .style.display = storyVisible < storyLines.length ? 'block':'none';
+    }
+    function addToStoryboard() {
+      const line = document.getElementById('storyInput').value.trim();
+      if (!line) return alert('Add your line!');
+      storyLines.push(line);
+      localStorage.setItem('storyBoard', JSON.stringify(storyLines));
+      document.getElementById('storyInput').value = '';
+      loadStory();
+    }
+    document.getElementById('storyMoreBtn')
+      .addEventListener('click', ()=>{ storyVisible +=5; loadStory(); });
+    loadStory();
+
+
+    // ─── Fun Poll w/ “Show More” ───
+    const pollKey = 'funniestVote', pollVotes = JSON.parse(localStorage.getItem(pollKey)||'{}');
+    const pollOptions = ["Chinedu","Amaka","Tobi","Zainab"];
+    let pollVisible = 5;
+    function renderPollOptions() {
+      document.getElementById('pollOptions').innerHTML = pollOptions.map(o=>
+        `<label><input type="radio" name="poll" value="${o}"> ${o}</label>`
+      ).join('<br>');
+      showPollResults();
+    }
+    function vote() {
+      const sel = document.querySelector('input[name="poll"]:checked');
+      if (!sel) return alert("Select someone!");
+      pollVotes[sel.value] = (pollVotes[sel.value]||0)+1;
+      localStorage.setItem(pollKey, JSON.stringify(pollVotes));
+      showPollResults();
+    }
+    function showPollResults() {
+      const entries = Object.entries(pollVotes)
+        .sort((a,b)=>b[1]-a[1]);
+      const slice = entries.slice(0,pollVisible);
+      document.getElementById('pollResults').innerHTML =
+        slice.map(([n,v])=>`<div>${n}: ${v} votes</div>`).join('');
+      document.getElementById('pollMoreBtn')
+        .style.display = pollVisible < entries.length ? 'block':'none';
+    }
+    document.getElementById('pollMoreBtn')
+      .addEventListener('click', ()=>{ pollVisible+=5; showPollResults();});
+    renderPollOptions();
+
+
+    // ─── Guestbook w/ “Show More” ───
+    let guestEntries = JSON.parse(localStorage.getItem('guestbook')||'[]');
+    let guestVisible = 5;
+    function loadGuestbook() {
+      const slice = guestEntries.slice(-guestVisible);
+      document.getElementById('guestbookEntries').innerHTML =
+        slice.map(e=>`<div><strong>${e.name}:</strong> ${e.msg}</div>`).join('');
+      document.getElementById('guestMoreBtn')
+        .style.display = guestVisible < guestEntries.length ? 'block':'none';
+    }
+    function signGuestbook() {
+      const name = document.getElementById('guestName').value.trim();
+      const msg  = document.getElementById('guestMsg').value.trim();
+      if (!name||!msg) return alert('Fill both!');
+      guestEntries.push({name,msg});
+      localStorage.setItem('guestbook', JSON.stringify(guestEntries));
+      document.getElementById('guestName').value='';
+      document.getElementById('guestMsg').value='';
+      loadGuestbook();
+    }
+    document.getElementById('guestMoreBtn')
+      .addEventListener('click', ()=>{ guestVisible+=5; loadGuestbook();});
+    loadGuestbook();
+    function pickSpotlight() {
+    if (!studentsData || !studentsData.length) return;
+    const rnd = studentsData[Math.floor(Math.random() * studentsData.length)];
+    document.getElementById('spotlightContent').innerHTML = `
+      <img src="${rnd.image}" alt="${rnd.name}">
+      <p><strong>${rnd.name}</strong><br>${rnd.quote || ''}</p>
+    `;
+  }
+  // Fire once on load:
+  window.addEventListener('DOMContentLoaded', pickSpotlight);
+
+  // ————— NOSTALGIA GENERATOR —————
+  const memories = [
+    "First day of SS1 – Sept 2019",
+    "Inter-house Sports – Feb 2022",
+    "WAEC Begins – May 2025",
+    "Valedictory Ceremony – July 2025",
+    // …add as many as you like…
+  ];
+  function showMemory() {
+    const rand = memories[Math.floor(Math.random() * memories.length)];
+    document.getElementById('memoryDisplay').textContent = rand;
+  }
+  // Initialize the display to the first memory:
+  window.addEventListener('DOMContentLoaded', showMemory);
+ // ←– Replace with your real keys:
+  const GOOGLE_API_KEY = 'AIzaSyBT_KmOXAQzh5jdVZvaXjw8px8KYBYVjdI';
+  const GOOGLE_CX      = 'f5a379d3780dc4b28';
+
+  document.getElementById('qaSubmit').addEventListener('click', async () => {
+    const q = document.getElementById('qaInput').value.trim();
+    const respDiv = document.getElementById('qaResponse');
+    if (!q) return respDiv.textContent = 'Please type a question.';
+
+    respDiv.textContent = 'Searching Google…';
+
+    try {
+      const url = new URL('https://www.googleapis.com/customsearch/v1');
+      url.searchParams.set('key', GOOGLE_API_KEY);
+      url.searchParams.set('cx',  GOOGLE_CX);
+      url.searchParams.set('q',   q);
+
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(await res.text());
+      const data = await res.json();
+
+      if (!data.items || data.items.length === 0) {
+        respDiv.textContent = "No results found.";
+      } else {
+        // show top 3 results
+        respDiv.innerHTML = data.items.slice(0,3).map(item =>
+          `<p>
+             <a href="${item.link}" target="_blank">${item.title}</a><br>
+             ${item.snippet}
+           </p>`
+        ).join('');
+      }
+    } catch (err) {
+      console.error(err);
+      respDiv.textContent = 'Error fetching results.';
+    }
+  });
+</script>
+
+
+</body>
+</html>

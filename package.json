@@ -1,0 +1,17 @@
+{
+  "name": "digital-year-book",
+  "version": "1.0.0",
+  "description": "",
+  "main": "env.template.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-env": "node generate-env.js",
+    "build":  "npm run build-env && echo \"(then copy your files to dist or deploy)\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.0.1"
+  }
+}

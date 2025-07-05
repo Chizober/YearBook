@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Detail</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <style>
+    body {
+      padding: 2rem;
+      background: #f4f4f4;
+      font-family: Arial, sans-serif;
+    }
+    .student-detail {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 5px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      width:95%;
+      margin:auto;
+    }
+
+    .student-image img {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .student-info h2 {
+      margin: 1rem 0 0.5rem;
+    }
+
+    .student-info p {
+      line-height: 1.2;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 1rem;
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: bold;
+    }
+    .shoutouts-section {
+      margin-top: 2rem;
+    }
+    .shoutout {
+      background: #f9f9f9;
+      border-left: 4px solid #ffa500;
+      padding: 0.5rem 1rem;
+      margin: 0.5rem 0;
+      border-radius: 5px;
+    }
+    .messages {
+      margin-top: 1rem;
+    }
+    .messages input {
+      padding: 0.5rem;
+      margin: 0.3rem 0;
+      width: 100%;
+      max-width: 300px;
+    }
+    .messages button {
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: #ffa500;
+      border: none;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .student-detail {
+        grid-template-columns: 1fr;
+      }
+
+      .messages input {
+        max-width: 100%;
+      }
+    }
+  </style>
+  
+</head>
+<body>
+  <div class="student-detail" id="studentProfile">Loading...</div>
+<button id="exportPdfBtn" style="margin:1rem 0; padding:0.6rem 1.2rem; background:#2c3e50; color:white; border:none; border-radius:5px;">
+  📄 Download My Page as PDF
+</button>
+
+  <script>
+    let currentStudentName = "";
+
+    async function loadStudentDetail() {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const id = parseInt(params.get("id"));
+        const res = await fetch("students.json");
+        const students = await res.json();
+        const student = students[id];
+
+        const container = document.getElementById("studentProfile");
+
+        if (!student) {
+          container.innerHTML = "<p>Student not found.</p>";
+          return;
+        }
+
+        currentStudentName = student.name;
+
+        container.innerHTML = `
+         <div class="student-image">
+            <img src="${student.image}" alt="${student.name}" />
+          </div>
+
+          <div class="student-info">
+            <h2>${student.name}</h2>
+            <p><strong>Best Subject:</strong> ${student.bestSubject || "N/A"}</p>
+            <p><strong>Quote:</strong> “${student.quote || "No quote available"}”</p>
+           <p><strong>Interests:</strong> “${student.interests || "No interest available"}”</p>
+          <p><strong>Achievements:</strong> ${student.achievements || "None"}</p>
+          <p><strong>Accomplishments:</strong> ${student.accomplishments || "None"}</p>
+          <p><strong>Superlatives:</strong> ${student.superlatives?.join(", ") || "None"}</p>
+
+          <div class="shoutouts-section">
+            <h3>💌 Shoutouts</h3>
+            <div id="shoutoutsContainer"></div>
+<div class="memory-quiz">
+  <button onclick="launchQuiz()" style="margin-top:1rem; padding:0.5rem 1rem; background:#2196F3; color:white; border:none; border-radius:5px;">🧠 Take Memory Quiz</button>
+  <div id="quizBox" style="margin-top:1rem;"></div>
+</div>
+
+            <div class="messages">
+              <strong>Leave a Shouout:</strong><br>
+              <input type="text" placeholder="Your Name" id="commenterName">
+              <input type="text" placeholder="Your Message" id="commentText">
+              <button onclick="postComment()">💬 Post</button>
+            </div>
+            </div>
+          <a href="index.html" class="back-link">← Back to Yearbook</a>
+          </div>
+        `;
+
+        loadShoutouts(); // Load shoutouts after rendering
+        renderQuizSummary(currentStudentName);
+
+      } catch (error) {
+        console.error("Failed to load student details:", error);
+        document.getElementById("studentProfile").innerHTML = "<p>Failed to load student details.</p>";
+      }
+    }
+function renderQuizSummary(name) {
+  const result = JSON.parse(localStorage.getItem("memoryQuiz_" + name));
+  if (!result) return;
+
+  const quizBox = document.getElementById("quizBox");
+  quizBox.innerHTML = `
+    <div style="margin-top:1rem; background:#e8f5e9; padding:1rem; border-left:5px solid green; border-radius:5px;">
+      <h4>🎯 ${result.name}'s Quiz Summary</h4>
+      <p><strong>Score:</strong> ${result.score} / ${result.total}</p>
+      <ul style="list-style: none; padding-left: 0;">
+        ${result.answers.map(a => `
+          <li>
+            <strong>${a.question}</strong><br>
+            ✅ Your Answer: ${a.selected}<br>
+            📌 Correct: ${a.correct}
+          </li><br>
+        `).join("")}
+      </ul>
+    </div>
+  `;
+}
+
+    function loadShoutouts() {
+      const shoutoutsContainer = document.getElementById("shoutoutsContainer");
+      const allShoutouts = JSON.parse(localStorage.getItem("shoutouts")) || {};
+      const studentShoutouts = allShoutouts[currentStudentName] || [];
+
+      if (studentShoutouts.length) {
+        shoutoutsContainer.innerHTML = studentShoutouts
+  .map(s => {
+   const date = s.timestamp 
+      ? new Date(s.timestamp).toLocaleString() 
+      : 'Time unknown';
+    return `<div class="shoutout">
+      <strong>${s.from}:</strong> ${s.message}<br>
+      <small style="color:gray;">🕒 ${date}</small>
+    </div>`;
+  })
+  .join("");
+
+      } else {
+        shoutoutsContainer.innerHTML = "<p>No shoutouts yet.</p>";
+      }
+    }
+
+   function postComment() {
+  const name = document.getElementById("commenterName").value.trim();
+  const message = document.getElementById("commentText").value.trim();
+
+  
+  if (!name || !message) {
+    alert("Please fill in both name and message.");
+    return;
+  }
+
+  const allShoutouts = JSON.parse(localStorage.getItem("shoutouts")) || {};
+  if (!allShoutouts[currentStudentName]) {
+    allShoutouts[currentStudentName] = [];
+  }
+
+  const timestamp = new Date().toISOString(); // ⏰ save timestamp
+
+  allShoutouts[currentStudentName].push({
+    from: name,
+    message,
+    timestamp
+  });
+
+  localStorage.setItem("shoutouts", JSON.stringify(allShoutouts));
+
+  document.getElementById("commenterName").value = "";
+  document.getElementById("commentText").value = "";
+
+  loadShoutouts();
+}
+
+ const quizQuestions = [
+    {
+      question: "🎤 Who was our funniest classmate this year?",
+      options: ["Chinedu", "Amaka", "Tobi", "Zainab"],
+      answer: "Tobi"
+    },
+    {
+      question: "📚 Which subject made everyone panic before exams?",
+      options: ["Math", "English", "Agriculture", "CRK"],
+      answer: "Math"
+    },
+    {
+      question: "🎉 What was the name of our end-of-year party theme?",
+      options: ["Back in Time", "Jollof Vibes", "Cultural Vibes", "All White"],
+      answer: "Jollof Vibes"
+    }
+  ];
+
+  function launchQuiz() {
+  const container = document.getElementById("quizBox");
+  let html = `<form id="memoryQuizForm">`;
+
+  quizQuestions.forEach((q, i) => {
+    html += `<div style="margin-bottom:1rem;">
+      <strong>${i + 1}. ${q.question}</strong><br>`;
+    q.options.forEach(opt => {
+      html += `
+        <label>
+          <input type="radio" name="q${i}" value="${opt}" required />
+          ${opt}
+        </label><br>`;
+    });
+    html += `</div>`;
+  });
+
+  html += `<button type="submit" style="padding:0.5rem 1rem; background:green; color:white; border:none; border-radius:5px;">Submit Quiz</button></form>`;
+  container.innerHTML = html;
+
+  document.getElementById("memoryQuizForm").onsubmit = function (e) {
+    e.preventDefault();
+    submitQuiz();
+  };
+}
+
+function submitQuiz() {
+  let score = 0;
+  const answers = [];
+
+  quizQuestions.forEach((q, i) => {
+    const selected = document.querySelector(`input[name="q${i}"]:checked`)?.value;
+    const correct = q.answer;
+    if (selected === correct) score++;
+    answers.push({ question: q.question, selected, correct });
+  });
+
+  const result = {
+    name: currentStudentName,
+    answers,
+    score,
+    total: quizQuestions.length
+  };
+
+  // Save to localStorage for index.html to use later
+  localStorage.setItem("memoryQuiz_" + currentStudentName, JSON.stringify(result));
+
+  document.getElementById("quizBox").innerHTML = `
+    <p style="font-weight:bold; color:green;">🎉 Quiz completed! You scored ${score} out of ${quizQuestions.length}</p>
+  `;
+}
+loadStudentDetail();
+document.getElementById('exportPdfBtn').addEventListener('click', async () => {
+    const container = document.getElementById('studentProfile');
+    const canvas = await html2canvas(container, { scale: 2, useCORS: true });
+    const imgData = canvas.toDataURL('image/jpeg', 0.9);
+    const pdf = new jspdf.jsPDF({
+      orientation: 'p',
+      unit: 'mm',
+      format: 'a4'
+    });
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+    pdf.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight);
+    pdf.save(`${window.currentStudentName || 'student'}-Yearbook-Page.pdf`);
+  });
+</script>
+  <div id="quizModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#000000aa; z-index:999;">
+  <div style="background:white; width:90%; max-width:800px; margin:20px auto; padding:1rem; border-radius:10px; position:relative;">
+    <h3>🧠 Memory Quiz</h3>
+    <div id="quizContent"></div>
+    <button onclick="closeQuiz()" style="margin-top: 1rem;">Close</button>
+  </div>
+</div>
+</body>
+</html>
+
+

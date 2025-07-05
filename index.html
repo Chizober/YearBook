@@ -1318,8 +1318,8 @@ window.addEventListener('DOMContentLoaded', () => {
   // Initialize the display to the first memory:
   window.addEventListener('DOMContentLoaded', showMemory);
  // ←– Replace with your real keys:
-  const GOOGLE_API_KEY = 'AIzaSyBT_KmOXAQzh5jdVZvaXjw8px8KYBYVjdI';
-  const GOOGLE_CX      = 'f5a379d3780dc4b28';
+  const GOOGLE_API_KEY = env.GOOGLE_API_KEY;
+  const GOOGLE_CX      = env.GOOGLE_CX
 
   document.getElementById('qaSubmit').addEventListener('click', async () => {
     const q = document.getElementById('qaInput').value.trim();
